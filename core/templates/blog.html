@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <style>
+      body{
+        background-color:#FBFBFB;
+      }
+      .home {
+        height: 110vh;
+        background: url(../static/images/background-blog.svg) no-repeat;
+        background-size: 100%;
+      }
+    </style>
+
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}" />
+    <title>Blog</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    {% include 'partials/menu.html' %}
+
+      <div class="inicio">
+        <h1>
+          <strong>BLOG</strong>
+        </h1>
+      </div>
+    </div>
+    <div>
+      <div class="links">
+        <a href="{% url 'index' %}">Início</a>>><a href="{% url 'blog' %}">Ver Blog</a>
+      </div>
+      <div class="busca">
+        <input
+          type="text"
+          type="search"
+          class="txtBusca"
+          
+        />
+        <button class="butao" type="submit">
+          <img src="{% static 'images/busca.svg' %}" id="btnBusca" alt="Buscar" />
+        </button>
+      </div>
+    </div>
+
+    <div class="blog container">
+      <div class="row">
+        <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+          <div class="blog1">
+            <img src="{% static 'images/image1.svg' %}" />
+            <a href="{% url 'post' %}"
+              ><h3>
+                O QUE NÃO<br />
+                PODE ESQUECER<br />
+                AO VIAJAR
+              </h3></a
+            >
+            <h6>Por Yuri Azevedo</h6>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+          <div class="blog1">
+            <img src="{% static 'images/image2.svg' %}" />
+            <a href="{% url 'post' %}"><h3>3 DICAS ESSENCIAIS PARA VIAJAR</h3></a>
+
+            <h6>Por Yuri Azevedo</h6>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+          <div class="blog1">
+            <img src="{% static 'images/image3.svg' %}" />
+            <a href="{% url 'post' %}"
+              ><h3>
+                10 PRAIAS PARA CONHECER<br />
+                NO RN
+              </h3></a
+            >
+            <h6>Por Yuri Azevedo</h6>
+          </div>
+        </div>
+      </div>
+      <div class="paginador">
+        <ul>
+          <img src="{% static 'images/lileft.svg' %}" />
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+          <li>7</li>
+          <li>8</li>
+          <li>9</li>
+          <img src="{% static 'images/liright.svg' %}" alt="" />
+        </ul>
+      </div>
+    </div>
+{% endblock %}

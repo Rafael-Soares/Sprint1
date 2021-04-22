@@ -1,0 +1,36 @@
+{% load static %}
+<div class="home" id="home">
+    <nav class="navbar navbar-expand-lg navbar-light ">
+      <div>
+      <a class="logo" href="#home"><img src="{% static 'images/logo.svg' %}"></a>
+    </div>
+    <div> 
+    <button class="navbar-toggler botao-mobile" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class=" nav-mobile collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav menu">
+          <li class="nav-item active">
+            <a class="cor-link" href="{% url 'index' %}">Início <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="cor-link" href="#sobre">Sobre</a>
+          </li>
+          <li class="nav-item">
+            <a class="cor-link" href="#servicos">Serviços</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class=" mais cor-link btn-warning dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Mais
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#portfolio">Portfólio</a>
+              <a class="dropdown-item" href="#clientes-parceiros">Clientes e Parceiros</a>
+              <a class="dropdown-item" href="#blog">Blog</a>
+              <a class="dropdown-item" href="#contatos">Contato</a>
+            </div>
+          </li>
+        </ul>
+      </div> 
+      </div>
+    </nav>
