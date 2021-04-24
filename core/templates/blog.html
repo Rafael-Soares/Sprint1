@@ -51,39 +51,19 @@
 
     <div class="blog container">
       <div class="row">
+        {% for bloguinho in blog %}
         <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
           <div class="blog1">
-            <img src="{% static 'images/image1.svg' %}" />
-            <a href="{% url 'post' %}"
+            <img src="{{bloguinho.image_blog.url}}" />
+            <a href="{% url 'post'  %}"
               ><h3>
-                O QUE NÃO<br />
-                PODE ESQUECER<br />
-                AO VIAJAR
+                {{bloguinho.descricao_blog}}
               </h3></a
             >
-            <h6>Por Yuri Azevedo</h6>
+            <h6>Por {{bloguinho.autor}}</h6>
           </div>
         </div>
-        <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-          <div class="blog1">
-            <img src="{% static 'images/image2.svg' %}" />
-            <a href="{% url 'post' %}"><h3>3 DICAS ESSENCIAIS PARA VIAJAR</h3></a>
-
-            <h6>Por Yuri Azevedo</h6>
-          </div>
-        </div>
-        <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-          <div class="blog1">
-            <img src="{% static 'images/image3.svg' %}" />
-            <a href="{% url 'post' %}"
-              ><h3>
-                10 PRAIAS PARA CONHECER<br />
-                NO RN
-              </h3></a
-            >
-            <h6>Por Yuri Azevedo</h6>
-          </div>
-        </div>
+        {% endfor %}
       </div>
       <div class="paginador">
         <ul>

@@ -83,16 +83,7 @@
           <div class="quem col-sm-12 col-md-7 col-lg-7">
           <h2>QUEM SOMOS</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-          accumsan augue at rhoncus fringilla. jjjjjjjjjjjjjj viverra tempus
-          nisl sit amet consectetur. Curabitur facilisis purus vitae quam
-          hendrerit, quis tempus mi . Mauris dictum hendrerit lectus in
-          vehicula. Suspendisse et dolor enim. Lorem ipsum dolor sit amet,
-          consectetur adipiscing elit. Praesent accumsan augue at rhoncus
-          fringilla. Maecenas viverra tempus nisl sit amet consectetur.
-          Curabitur facilisis purus vitae quam hendrerit, quis tempus mi
-          bibendum. Mauris dictum hendrerit lectus in vehicula. Suspendisse et
-          dolor enim.
+          {{sobre.descricao}}
         </p>
         </div>
         <div class="carrossel col-sm-12 col-md-5 col-lg-5">
@@ -101,7 +92,7 @@
           <img src="{% static 'images/valores.svg' %}" />
           <h3>VALORES</h3>
           <h4>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent accumsan augue at rhoncus fringilla.  jhygy viverra tempus nisl sit.
+            {{sobre.valores}}
           </h4>
         </div>
 
@@ -109,14 +100,14 @@
           <img src="{% static 'images/flecha1.svg' %}" />
           <h3>MISSÃO</h3>
           <h4>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent accumsan augue at rhoncus fringilla.  jhygy viverra tempus nisl sit.
+            {{sobre.missao}}
           </h4>
         </div>
         <div>
           <img src="{% static 'images/visao.svg' %}" />
           <h3>VISÃO</h3>
           <h4>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent accumsan augue at rhoncus fringilla.  jhygy viverra tempus nisl sit.
+            {{sobre.visao}}
           </h4>
         </div>
       </div>
@@ -211,33 +202,33 @@
           <div class="row">
             <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
               
-              <div class="blog1"><img src="{% static 'images/Imagem-Seção-Blog-Bloco01.png' %}" />
-                <h3>O QUE NÃO<br> PODE ESQUECER<br> AO VIAJAR</h3>
+              <div class="blog1"><img src="{{blog1.image_blogindex.url}}" />
+                <h3>{{blog1.descricao_blogindex}}</h3>
                 <h6>
-                  Por Yuri Azevedo
+                  Por {{blog1.pessoa}}
                 </h6>
               </div>
             </div>
             <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
               
-              <div class="blog2"><img src="{% static 'images/Imagem-Seção-Blog-Bloco03.png' %}" />
-                <h3>3 DICAS ESSENCIAIS<br> PARA VIAJAR</h3>
+              <div class="blog2"><img src="{{blog2.image_blogindex.url}}" />
+                <h3>{{blog2.descricao_blogindex}}</h3>
                 
                 <h6>
-                  Por Yuri Azevedo
+                  Por {{blog2.pessoa}}
                 </h6>
               </div>
             </div>
             <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3">
               
-              <div class="blog1"><img src="{% static 'images/Imagem-Seção-Blog-Bloco02.png' %}" />
-                <h3>10 PRAIAS PARA CONHECER<br> NO RN</h3>
+              <div class="blog1"><img src="{{blog3.image_blogindex.url}}" />
+                <h3>{{blog3.descricao_blogindex}}</h3>
                 <h6>
-                  Por Yuri Azevedo
+                  Por {{blog3.pessoa}}
                 </h6>
               </div>
             </div>
-            <a class="grow" href="{% url 'blog' %}">Ver o Blog</a>
+            <a class="grow" href="{% url 'blog'  %}">Ver o Blog</a>
       </div>
       
 
