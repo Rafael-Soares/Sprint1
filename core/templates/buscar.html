@@ -39,7 +39,7 @@
           <div class="busca">
             <input
               type="text"
-              name="buscar"
+              type="search"
               class="txtBusca"  
             />    
           <button class="butao" type="submit">
@@ -55,18 +55,25 @@
     <div class="blog container">
       <div class="row">
         <!-- exibindo os postes -->
-        {% for postes in postes %}
+        {% if postes %}
+        {% for bloguinho in postes %}
         <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
           <div class="blog1">
-            <img src="{{postes.image_blog.url}}" />
-            <a href="{{postes.get_absolute_url}}"
+            <img src="{{bloguinho.image_blog.url}}" />
+            <a href=""
               ><h3>
-                {{postes.descricao_blog}}
-              </h3></a>
-            <h6>Por {{postes.autor}}</h6>
+                {{bloguinho.descricao_blog}}
+              </h3></a
+            >
+            <h6>Por {{bloguinho.autor}}</h6>
           </div>
         </div>
         {% endfor %}
+        {% else %}
+        <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+            <h1>Não há postes para essa busca</h1>
+        </div>    
+        {% endif %}
       </div>
       <!-- Paginação propriamente dita -->
       {% if postes.has_other_pages %}

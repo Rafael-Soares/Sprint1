@@ -123,31 +123,15 @@
         <h2>SERVIÇOS</h2>
         
         <div class="row">
-          
+          {%for servi in servicos %}
           <div class="col-sm">
-            <img src="{% static 'images/serv1.svg' %}" />
-            <h3>Agenciamento<br> de viagens</h3>
+            <img src="{{servi.foto_servico.url}}" />
+            <h3>{{servi.nome_servico}}</h3>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-              accumsan augue at rhoncus fringilla. jhygyviverra tempus nisl sit.
+              {{servi.descricao_servico}}
             </p>
           </div>
-          <div class="col-sm">
-            <img src="{% static 'images/serv2.svg' %}" />
-            <h3>Consultoria<br> Turística</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-              accumsan augue at rhoncus fringilla. jhygyviverra tempus nisl sit.
-            </p>
-          </div>
-          <div class="col-sm">
-            <img src="{% static 'images/serv3.svg' %}" />
-            <h3>Eventos <br>no Geral</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-              accumsan augue at rhoncus fringilla. jhygyviverra tempus nisl sit.
-            </p>
-          </div>
+          {% endfor %}
         </div>
       </div>
       
@@ -179,18 +163,9 @@
     <div class="clientes-parceiros" id="clientes-parceiros">
       <h2>CLIENTES E PARCEIROS</h2>
       <div class="carr2">
-        <div><img src="{% static 'images/cp1.svg' %}"></div>
-        <div><img src="{% static 'images/cp2.svg' %}"></div>
-        <div><img src="{% static 'images/cp1.svg' %}"></div>
-        <div><img src="{% static 'images/cp2.svg' %}"></div>
-        <div><img src="{% static 'images/cp1.svg' %}"></div>
-        <div><img src="{% static 'images/cp2.svg' %}"></div>
-        <div><img src="{% static 'images/cp1.svg' %}"></div>
-        <div><img src="{% static 'images/cp2.svg' %}"></div>
-        <div><img src="{% static 'images/cp1.svg' %}"></div>
-        <div><img src="{% static 'images/cp2.svg' %}"></div>
-        
-        
+        {% for parca in parceiros %}
+        <div><img src="{{parca.image_Parceiro.url}}"></div>
+        {% endfor %}
         
       </div>
       </div>
@@ -260,24 +235,21 @@
             
             
             </div>
-            <form class="form">
-              
-    
-              
-              <input  class="campo-nome" type=" text" placeholder="Nome" name="nome">
-    
-              
-              <input  class="campo-email" placeholder="E-mail" type="email">
+            <form class="form" method='post'>
+              {% if mensagem %}
+                <script>alert("E-mail enviado com sucesso!")</script>
+              {% endif %}
 
-              
-              <input  class="campo-assunto" placeholder="Assunto" type="email">
-    
-    
-              
-              <textarea class="campo-mensagem" placeholder="Mensagem"></textarea>
-    
+              {% csrf_token %}
+                    {{form.nome}}
+                            
+                    {{form.email}}
+                   
+                    {{form.assunto}}
+                    
+                    {{form.mensagem}}
+      
               <input  class="enviar" type="submit" value="ENVIAR">
-    
             </form>
           </div>
 

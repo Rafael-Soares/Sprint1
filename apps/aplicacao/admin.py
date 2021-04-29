@@ -39,4 +39,5 @@ class ListandoPost(admin.ModelAdmin):
     list_display_links = ('id', 'autor')
     search_fields = ('titulo',)
     list_per_page = 2
+    prepopulated_fields = {'slug': ('titulo',)}
 admin.site.register(Post, ListandoPost)
