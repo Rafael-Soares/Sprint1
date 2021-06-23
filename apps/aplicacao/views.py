@@ -62,7 +62,7 @@ def post(request, slug):
     }
     return render(request, 'post.html', contextPost)
 
-#def de busca
+#Funcao de busca
 def buscar(request):
     #fazendo a busca
     lista_postes = Post.objects.order_by('-data')

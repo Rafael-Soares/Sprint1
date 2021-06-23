@@ -1,5 +1,5 @@
 
-from pathlib import Path, os
+from pathlib import Path, os, sys
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,8 +20,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'apps.aplicacao',
-    'apps.pessoas',
+    'aplicacao',
+    'pessoas',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -132,3 +132,8 @@ DEFAULT_FROM_EMAIL = "aprenderecrescer30@gmail.com"
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+#configurando a pasta apps 
+PROJECT_ROOT = os.path.dirname(__file__)
+sys.path.insert(0, os.path.join(PROJECT_ROOT, '../apps'))

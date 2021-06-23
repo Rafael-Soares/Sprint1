@@ -1,6 +1,6 @@
 from django.db import models
 from datetime import datetime
-from apps.pessoas.models import Pessoa
+from pessoas.models import Pessoa
 #importação para get_absolute
 from django.urls import reverse
 
